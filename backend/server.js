@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // Configuración de MongoDB
-mongoose.connect('mongodb://localhost:27017/bingo-database', {
+mongoose.connect('mongodb://localhost:27017/bingo', {
   useUnifiedTopology: true,
 });
 

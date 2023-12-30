@@ -5,11 +5,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3025;
 
 // Configuración de MongoDB
 mongoose.connect('mongodb://localhost:27017/bingo', {
-  useUnifiedTopology: true,
 });
 
 // Configuración de Express
@@ -18,10 +17,10 @@ app.use(bodyParser.json());
 
 // Ruta de prueba
 app.get('/', (req, res) => {
-  res.send('¡Backend funcionando!');
+  res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
 });
 
 // Escucha en el puerto especificado
 app.listen(port, () => {
-  console.log(`Servidor en http://localhost:${port}`);
+  console.log(`Servidor en https://localhost:${port}`);
 });
